@@ -1,0 +1,16 @@
+{
+  "name": "react_express_fullstack",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Shuffguy/react_express_fullstack",
+  "authors": [
+    "shuffguy <ianvshuff@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
