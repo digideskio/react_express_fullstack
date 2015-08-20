@@ -10,7 +10,7 @@ gulp.task('live-server', function(){
 	server.start();
 });
 
-gulp.task('bundle', function(){
+gulp.task('bundle', ['copy'], function(){
 	return browserify({
 		entries: 'app/main.jsx',
 		debug: true
@@ -21,7 +21,12 @@ gulp.task('bundle', function(){
 	.pipe(gulp.dest('./.tmp'))
 });
 
-gulp.task('serve', ['live-server'], function(){
+gulp.task('copy', function(){
+	gulp.src(['app/*.css'])
+	.pipe(gulp.dest('./.tmp'));
+});
+
+gulp.task('serve', ['bundle', 'live-server'], function(){
 	BrowserSync.init(null, {
 		proxy:"http://localhost:7777",
 		port: 9001
